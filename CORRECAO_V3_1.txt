@@ -1,0 +1,17 @@
+INVENTORBLOCKS V3.1
+
+Correção principal:
+Os arquivos JavaScript da V3 continham um caractere '\' indevido na primeira linha.
+Isso impedia o navegador de executar blocks.js/app.js e, consequentemente,
+o Blockly não inicializava corretamente.
+
+Nesta versão:
+- blocks.js corrigido
+- app.js corrigido
+- firmware .ino corrigido
+- novo js/toolbox.js
+- index.html atualizado para carregar toolbox.js
+- toolbox definido em JavaScript, com categorias:
+  Controle
+  LED
+  Sirene
