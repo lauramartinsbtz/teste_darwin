@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  min-height: 82px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: white;
+  border-bottom: 1px solid #d1d5db;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 25px;
+  letter-spacing: .5px;
+}
+
+header p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button {
+  border: 1px solid #cbd5e1;
+  background: white;
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button.primary {
+  background: #111827;
+  color: white;
+  border-color: #111827;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+main {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 370px;
+}
+
+.workspace-area {
+  min-width: 0;
+  min-height: 0;
+}
+
+#blocklyDiv {
+  width: 100%;
+  height: 100%;
+}
+
+aside {
+  padding: 12px;
+  overflow: auto;
+  border-left: 1px solid #d1d5db;
+}
+
+.card {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.status {
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.connected {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.disconnected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 12px;
+}
+
+#generatedCode {
+  min-height: 180px;
+  max-height: 380px;
+  overflow: auto;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#console {
+  min-height: 180px;
+  max-height: 320px;
+  overflow: auto;
+  background: #111827;
+  color: #e5e7eb;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.console-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.console-header h2 {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 60vh auto;
+  }
+
+  aside {
+    border-left: none;
+    border-top: 1px solid #d1d5db;
+  }
+}
+
+/* USB + Bluetooth LE */
+.connection-list {
+  display: grid;
+  gap: 8px;
+}
+
+.status.neutral,
+.neutral {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.connection-help {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #64748b;
+}
